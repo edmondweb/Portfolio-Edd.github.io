@@ -45,6 +45,11 @@ nav ul li a:hover {
     color: #f1c40f;
 }
 
+nav ul li a img {
+    width: 21px;
+    height: 16px;
+}
+
 .intro {
     display: flex;
     justify-content: space-between;
