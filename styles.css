@@ -42,8 +42,14 @@ nav ul li a:hover {
 }
 
 .intro {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 60px 20px;
+}
+
+.intro-text {
+    max-width: 50%;
 }
 
 .intro h1 {
@@ -53,8 +59,13 @@ nav ul li a:hover {
 
 .intro p {
     font-size: 1.2rem;
-    max-width: 800px;
-    margin: 20px auto;
+    margin: 20px 0;
+}
+
+.intro-image img {
+    width: 400px;
+    height: auto;
+    border-radius: 10px;
 }
 
 .projects {
