@@ -11,6 +11,27 @@ body {
     line-height: 1.6;
 }
 
+.logo-e {
+    color: grey;
+}
+
+.logo-web {
+    color: white;
+}
+
+.logo a:hover .logo-e,
+.logo a:hover .logo-web {
+    color: white;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
 header {
     display: flex;
     justify-content: space-between;
