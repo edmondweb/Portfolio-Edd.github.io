@@ -91,7 +91,7 @@ nav ul li a img {
 }
 
 .intro p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 20px 0;
 }
 
@@ -137,12 +137,63 @@ nav ul li a img {
 }
 
 footer {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
     padding: 20px;
-    background-color: #111;
-    margin-top: 40px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+footer nav ul li a:hover {
+    text-decoration: underline;
 }
 
 footer p {
-    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-nav li a:hover {
+    text-decoration: underline;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
 }

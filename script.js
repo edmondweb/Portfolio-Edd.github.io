@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const heading = document.getElementById("intro-heading");
     const originalText = heading.textContent;
     const duration = 500; // Duration for the random numbers effect in milliseconds
-    const interval = 100; // Interval between each random number change in milliseconds
+    const interval = 50; // Interval between each random number change in milliseconds
 
     function getRandomNumber() {
         return Math.floor(Math.random() * 10);
@@ -65,4 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleBtn.addEventListener('click', function() {
         sidebar.classList.toggle('open');
     });
+
+    // Fade-in and fade-out effect on scroll
+    const fadeElements = document.querySelectorAll('.intro, .projects, footer');
+
+    function checkFade() {
+        fadeElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                element.classList.add('fade-in');
+                element.classList.remove('fade-out');
+            } else {
+                element.classList.add('fade-out');
+                element.classList.remove('fade-in');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkFade);
+    checkFade(); // Initial check
 });
