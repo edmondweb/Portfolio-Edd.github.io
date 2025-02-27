@@ -275,3 +275,53 @@ footer p {
     gap: 10px;
     padding: 20px;
   }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.image {
+    flex: 1;
+    background: url('edd.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+    background-color: #2e2e2e;
+}
+
+.content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info div {
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
