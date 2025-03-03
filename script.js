@@ -84,4 +84,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', checkFade);
     checkFade(); // Initial check
+
+     // Counting effect for stats
+     const stats = document.querySelectorAll('.stat');
+     stats.forEach(stat => {
+         const updateCount = () => {
+             const target = +stat.getAttribute('data-target');
+             const count = +stat.innerText;
+             const increment = target / 200;
+ 
+             if (count < target) {
+                 stat.innerText = Math.ceil(count + increment);
+                 setTimeout(updateCount, 1);
+             } else {
+                 stat.innerText = target;
+             }
+         };
+ 
+         updateCount();
+     });
 });
