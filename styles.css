@@ -325,3 +325,19 @@ footer p {
     border-radius: 8px;
     margin-top: 10px;
 }
+
+.insights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 600px;
+    text-align: left;
+}
+.stat {
+    font-weight: bold;
+    font-size: 24px;
+}
+.description {
+    font-size: 16px;
+    color: #555;
+}
