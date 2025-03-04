@@ -1,8 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Typing effect for heading
     const heading = document.getElementById("intro-heading");
     const originalText = heading.textContent;
-    const duration = 500; // Duration for the random numbers effect in milliseconds
+    const duration = 300; // Duration for the random numbers effect in milliseconds
     const interval = 50; // Interval between each random number change in milliseconds
+
+    // Counting effect for stats
+    const stats = document.querySelectorAll('.stat');
+    
+    function startCountingEffect() {
+        stats.forEach(stat => {
+            const target = +stat.getAttribute('data-target'); // Get target value from data attribute
+            const increment = target / 200; // Increment rate for the counter animation
+            let count = 0;
+
+            function updateCount() {
+                if (count < target) {
+                    count += increment;
+                    stat.innerText = Math.ceil(count); // Update the stat number
+                    setTimeout(updateCount, 1); // Continue updating
+                } else {
+                    stat.innerText = target; // Ensure the counter ends at the target number
+                }
+            }
+
+            updateCount(); // Start the counter animation
+        });
+    }
 
     function getRandomNumber() {
         return Math.floor(Math.random() * 10);
@@ -19,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 index++;
                 setTimeout(typeEffect, 100); // Adjust the typing speed as needed
             } else {
-                callback();
+                callback(); // Call the callback function after the typing effect ends
             }
         }
 
@@ -56,7 +80,9 @@ document.addEventListener("DOMContentLoaded", function() {
         typeEffect();
     }
 
-    typeNumbers(showRandomNumbers);
+    // Start both the counting effect and the random number typing effect simultaneously
+    startCountingEffect(); // Start counting right away
+    typeNumbers(showRandomNumbers); // Start typing random numbers and proceed to original text
 
     // Sidebar toggle functionality
     const toggleBtn = document.querySelector('.toggle-btn');
@@ -84,23 +110,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', checkFade);
     checkFade(); // Initial check
-
-     // Counting effect for stats
-     const stats = document.querySelectorAll('.stat');
-     stats.forEach(stat => {
-         const updateCount = () => {
-             const target = +stat.getAttribute('data-target');
-             const count = +stat.innerText;
-             const increment = target / 200;
- 
-             if (count < target) {
-                 stat.innerText = Math.ceil(count + increment);
-                 setTimeout(updateCount, 1);
-             } else {
-                 stat.innerText = target;
-             }
-         };
- 
-         updateCount();
-     });
 });

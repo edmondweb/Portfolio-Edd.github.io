@@ -328,14 +328,28 @@ footer p {
 
 .insights {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    max-width: 600px;
-    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200%;
+    padding: 20px;
+    margin: 0 auto;
 }
 .stat {
     font-weight: bold;
     font-size: 24px;
+    color: #fff;
+}
+.stat-box {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e;
 }
 .description {
     font-size: 16px;
