@@ -327,8 +327,8 @@ footer p {
 }
 
 .insights {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
     gap: 30px;
     max-width: 600px;
     text-align: left;
@@ -339,5 +339,5 @@ footer p {
 }
 .description {
     font-size: 16px;
-    color: #555;
+    color: #777;
 }
