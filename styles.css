@@ -322,6 +322,23 @@ nav ul li a:hover::after {
     text-align: center;
 }
 
+.skills h1 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.skills h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #3498db;
+    bottom: -10px;
+    left: 25%;
+}
 
 .skills .container {
     display: flex;
@@ -335,10 +352,13 @@ nav ul li a:hover::after {
     background-color: #1a1a1a;
     border-radius: 15px;
     padding: 25px;
-    width: 280px;
+    width: 250px;
+    height: 220px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-top: 3px solid #3498db;
+    display: flex;
+    flex-direction: column;
 }
 
 .skills .project-header h2 {
@@ -375,45 +395,29 @@ nav ul li a:hover::after {
     padding: 80px 5%;
     max-width: 1400px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .contact .container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     background-color: #1a1a1a;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-}
-
-.contact .intro-image {
-    flex: 1;
-    min-width: 300px;
     padding: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact .intro-image img {
-    max-width: 200px;
-    border-radius: 15px;
 }
 
 .contact .content {
-    flex: 2;
-    min-width: 300px;
-    padding: 40px;
+    width: 100%;
+    padding: 0 0 30px 0;
     background-color: #1a1a1a;
 }
 
 .contact h1 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #f1f1f1;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
     font-weight: 700;
     position: relative;
     display: inline-block;
@@ -426,7 +430,7 @@ nav ul li a:hover::after {
     height: 3px;
     background-color: #3498db;
     bottom: -10px;
-    left: 0;
+    left: 25%;
 }
 
 .contact p {
@@ -438,6 +442,11 @@ nav ul li a:hover::after {
 
 .contact-info {
     margin: 30px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
 }
 
 .contact-info div {
@@ -468,6 +477,8 @@ nav ul li a:hover::after {
     flex-direction: column;
     gap: 20px;
     width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .form-group {
@@ -524,15 +535,20 @@ footer {
     padding: 30px 5%;
     margin-top: 80px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    text-align: center;
+}
+
+footer nav {
+    margin-bottom: 20px;
 }
 
 footer nav ul {
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
 footer nav ul li a img {
