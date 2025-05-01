@@ -1,100 +1,192 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Typing effect for heading
-    const heading = document.getElementById("intro-heading");
-    const originalText = heading.textContent;
-    const duration = 300; // Duration for the random numbers effect in milliseconds
-    const interval = 50; // Interval between each random number change in milliseconds
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 
-    // Counting effect for stats
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('header nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Typing effect for heading with random numbers
+    const heading = document.getElementById("intro-heading");
+    if (heading) {
+        const originalText = heading.textContent;
+        const duration = 300; // Duration for the random numbers effect in milliseconds
+        const interval = 50; // Interval between each random number change in milliseconds
+
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 10);
+        }
+
+        function typeNumbers(callback) {
+            const numbers = Array(7).fill(0).map(getRandomNumber).join(' ');
+            heading.textContent = "";
+            let index = 0;
+            function typeEffect() {
+                if (index < numbers.length) {
+                    heading.textContent += numbers.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 100);
+                } else {
+                    callback();
+                }
+            }
+            typeEffect();
+        }
+
+        function showRandomNumbers() {
+            let startTime = Date.now();
+            function updateText() {
+                if (Date.now() - startTime < duration) {
+                    heading.textContent = Array(7).fill(0).map(getRandomNumber).join(' ');
+                    setTimeout(updateText, interval);
+                } else {
+                    showOriginalText();
+                }
+            }
+            updateText();
+        }
+
+        function showOriginalText() {
+            heading.textContent = "";
+            let index = 0;
+            function typeEffect() {
+                if (index < originalText.length) {
+                    heading.textContent += originalText.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            typeEffect();
+        }
+
+        // Start the typing effect
+        typeNumbers(showRandomNumbers);
+    }
+
+    // Statistics counter animation
     const stats = document.querySelectorAll('.stat');
     
     function startCountingEffect() {
         stats.forEach(stat => {
-            const target = +stat.getAttribute('data-target'); // Get target value from data attribute
-            const increment = target / 200; // Increment rate for the counter animation
+            const target = +stat.getAttribute('data-target');
+            const increment = target / 200;
             let count = 0;
-
+            
             function updateCount() {
                 if (count < target) {
                     count += increment;
-                    stat.innerText = Math.ceil(count); // Update the stat number
-                    setTimeout(updateCount, 1); // Continue updating
+                    stat.innerText = Math.ceil(count);
+                    requestAnimationFrame(updateCount);
                 } else {
-                    stat.innerText = target; // Ensure the counter ends at the target number
+                    stat.innerText = target;
                 }
             }
-
-            updateCount(); // Start the counter animation
+            
+            updateCount();
         });
     }
 
-    function getRandomNumber() {
-        return Math.floor(Math.random() * 10);
+    // Run counter animation when stats section is in view
+    const insightsSection = document.querySelector('.insights');
+    if (insightsSection) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCountingEffect();
+                    observer.unobserve(insightsSection);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(insightsSection);
     }
 
-    function typeNumbers(callback) {
-        const numbers = Array(7).fill(0).map(getRandomNumber).join(' ');
-        heading.textContent = "";
-        let index = 0;
-
-        function typeEffect() {
-            if (index < numbers.length) {
-                heading.textContent += numbers.charAt(index);
-                index++;
-                setTimeout(typeEffect, 100); // Adjust the typing speed as needed
-            } else {
-                callback(); // Call the callback function after the typing effect ends
+    // Form submission handling
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Basic validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
             }
-        }
-
-        typeEffect();
-    }
-
-    function showRandomNumbers() {
-        let startTime = Date.now();
-
-        function updateText() {
-            if (Date.now() - startTime < duration) {
-                heading.textContent = Array(7).fill(0).map(getRandomNumber).join(' ');
-                setTimeout(updateText, interval);
-            } else {
-                showOriginalText();
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
             }
-        }
-
-        updateText();
+            
+            // Here you would typically send the form data to your server
+            console.log({
+                name,
+                email,
+                subject,
+                message
+            });
+            
+            // Reset form and show success message
+            contactForm.reset();
+            alert('Your message has been sent successfully!');
+        });
     }
 
-    function showOriginalText() {
-        heading.textContent = "";
-        let index = 0;
+    // Project card hover effects
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
+    });
 
-        function typeEffect() {
-            if (index < originalText.length) {
-                heading.textContent += originalText.charAt(index);
-                index++;
-                setTimeout(typeEffect, 100); // Adjust the typing speed as needed
-            }
-        }
-
-        typeEffect();
-    }
-
-    // Start both the counting effect and the random number typing effect simultaneously
-    startCountingEffect(); // Start counting right away
-    typeNumbers(showRandomNumbers); // Start typing random numbers and proceed to original text
-
-    // Sidebar toggle functionality
+    // Sidebar toggle functionality (if present in HTML)
     const toggleBtn = document.querySelector('.toggle-btn');
     const sidebar = document.querySelector('.sidebar');
-
-    toggleBtn.addEventListener('click', function() {
-        sidebar.classList.toggle('open');
-    });
+    if (toggleBtn && sidebar) {
+        toggleBtn.addEventListener('click', function() {
+            sidebar.classList.toggle('open');
+        });
+    }
 
     // Fade-in and fade-out effect on scroll
     const fadeElements = document.querySelectorAll('.intro, .projects, footer');
-
     function checkFade() {
         fadeElements.forEach(element => {
             const rect = element.getBoundingClientRect();
@@ -107,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-
+    
     window.addEventListener('scroll', checkFade);
     checkFade(); // Initial check
 });
