@@ -317,9 +317,9 @@ nav ul li a:hover::after {
 /* Skills Section */
 .skills {
     padding: 80px 5%;
-    text-align: center;
     max-width: 1400px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .skills h1 {
@@ -329,6 +329,8 @@ nav ul li a:hover::after {
     position: relative;
     display: inline-block;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skills h1::after {
@@ -360,6 +362,7 @@ nav ul li a:hover::after {
     border-top: 3px solid #3498db;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .skills .project-header h2 {
@@ -367,6 +370,7 @@ nav ul li a:hover::after {
     color: #f1f1f1;
     margin-bottom: 20px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .skills .tags {
@@ -384,6 +388,9 @@ nav ul li a:hover::after {
     font-size: 0.9rem;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
 .skills .tag:hover {

@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Form submission handling
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.querySelector('.contact-form form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -160,7 +160,31 @@ document.addEventListener("DOMContentLoaded", function() {
             
             // Reset form and show success message
             contactForm.reset();
-            alert('Your message has been sent successfully!');
+            
+            // Create a custom success message element
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.style.backgroundColor = 'rgba(46, 204, 113, 0.2)';
+            successMessage.style.color = '#2ecc71';
+            successMessage.style.padding = '15px';
+            successMessage.style.borderRadius = '8px';
+            successMessage.style.marginTop = '20px';
+            successMessage.style.textAlign = 'center';
+            successMessage.style.fontWeight = '500';
+            successMessage.innerHTML = '<span style="font-size: 20px;">✓</span> Your message has been sent successfully!';
+            
+            // Find the parent container to add the message after the form
+            const formContainer = document.querySelector('.contact-form');
+            formContainer.appendChild(successMessage);
+            
+            // Remove the success message after 5 seconds
+            setTimeout(() => {
+                successMessage.style.opacity = '0';
+                successMessage.style.transition = 'opacity 0.5s ease-out';
+                setTimeout(() => {
+                    formContainer.removeChild(successMessage);
+                }, 500);
+            }, 5000);
         });
     }
 
@@ -175,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
             this.style.transform = '';
         });
     });
-
+    
     // Sidebar toggle functionality (if present in HTML)
     const toggleBtn = document.querySelector('.toggle-btn');
     const sidebar = document.querySelector('.sidebar');
