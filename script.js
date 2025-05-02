@@ -226,4 +226,72 @@ document.addEventListener("DOMContentLoaded", function() {
     
     window.addEventListener('scroll', checkFade);
     checkFade(); // Initial check
+    
+    // ========= PROJECT MODAL FUNCTIONALITY =========
+    
+    // Show modal container
+    const modalContainer = document.getElementById('project-modals');
+    if (modalContainer) {
+        modalContainer.style.display = 'block';
+        
+        // Get all modal trigger links
+        const modalTriggers = document.querySelectorAll('.modal-trigger');
+        
+        // Get all close buttons
+        const closeButtons = document.querySelectorAll('.close-modal');
+        
+        // Function to open modal
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                // Prevent body scrolling when modal is open
+                document.body.style.overflow = 'hidden';
+                
+                // Display and animate modal
+                modal.classList.add('active');
+            }
+        }
+        
+        // Function to close modal
+        function closeModal() {
+            // Get all active modals
+            const activeModals = document.querySelectorAll('.project-modal.active');
+            
+            // Close each active modal
+            activeModals.forEach(modal => {
+                modal.classList.remove('active');
+            });
+            
+            // Re-enable body scrolling
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Add click event to all modal triggers
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetModalId = this.getAttribute('href').substring(1);
+                openModal(targetModalId);
+            });
+        });
+        
+        // Add click event to all close buttons
+        closeButtons.forEach(button => {
+            button.addEventListener('click', closeModal);
+        });
+        
+        // Close modal when clicking outside of content
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('project-modal')) {
+                closeModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    }
 });

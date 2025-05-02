@@ -63,79 +63,350 @@
     <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project-grid">
+            <!-- Project 1: Automated Sales Data Generation -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="aut.PNG" alt="Business Analytics" class="project-image">
+                    <img src="aut.PNG" alt="Automated Sales Data Generation" class="project-image">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Automated Sales Data Generation</h3>
-                    <p class="project-desc">Developing a VBA-powered automation system that retrieves sales data...</p>
+                    <p class="project-desc">Developed a VBA-powered automation system that retrieves sales data from an MS Access database and imports it into Excel for efficient reporting and analysis.</p>
                     <div class="project-tech">
                         <span class="tech-tag">VBA</span>
                         <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">MS Access</span>
                     </div>
-                    <a href="#" class="project-link">Read more &rarr;</a>
+                    <a href="#project-automated" class="project-link modal-trigger">Read more &rarr;</a>
                 </div>
             </div>
-
+    
+            <!-- Project 2: Banking Insights -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="demo.PNG" alt="Data Analytics and Visualization" class="project-image">
+                    <img src="demo.PNG" alt="Banking Insights" class="project-image">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Banking Insights - Customer Demographics & Spending Analysis</h3>
-                    <p class="project-desc">The task's objective was to analyze customer demographics and spending patterns using Power BI and Excel..</p>
+                    <h3 class="project-title">Banking Insights</h3>
+                    <p class="project-desc">Analyzed customer demographics and spending patterns for a leading Indian bank, providing data-driven insights to optimize engagement strategies.</p>
                     <div class="project-tech">
-                        <span class="tech-tag">MS Excel</span>
                         <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">MS Excel</span>
+                        <span class="tech-tag">Power Query</span>
                     </div>
-                    <a href="#" class="project-link">Read more &rarr;</a>
+                    <a href="#project-banking" class="project-link modal-trigger">Read more &rarr;</a>
                 </div>
             </div>
-
+    
+            <!-- Project 3: iPhone Market Trends Analysis -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="iphone.PNG" alt="Sales Data Analysis" class="project-image">
+                    <img src="iphone.PNG" alt="iPhone Market Trends Analysis" class="project-image">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">iPhone Market Trends Analysis</h3>
-                    <p class="project-desc">The task's objective was to analyze iPhone sales performance on Flipkart...</p>
+                    <p class="project-desc">Analyzed iPhone sales performance on Flipkart, identifying highest-rated models, pricing trends, and the impact of discounts on customer ratings.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Plotly</span>
                     </div>
-                    <a href="#" class="project-link">Read more &rarr;</a>
+                    <a href="#project-iphone" class="project-link modal-trigger">Read more &rarr;</a>
                 </div>
             </div>
-
+    
+            <!-- Project 4: Real Estate Market Analysis -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="real.PNG" alt="Real Estate Price per Square Metre (PSM) Analysis for Housing in Melbourne" class="project-image">
+                    <img src="real.PNG" alt="Real Estate Market Analysis" class="project-image">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Real Estate Market Analysis</h3>
-                    <p class="project-desc">Analyzing real estate pricing trends in Metropolitan Melbourne...</p>
+                    <p class="project-desc">Analyzed real estate pricing trends in Metropolitan Melbourne using statistical methods and hypothesis testing to determine pricing benchmarks.</p>
                     <div class="project-tech">
                         <span class="tech-tag">R</span>
+                        <span class="tech-tag">dplyr</span>
+                        <span class="tech-tag">ggplot2</span>
                     </div>
-                    <a href="#" class="project-link">Read more &rarr;</a>
+                    <a href="#project-realestate" class="project-link modal-trigger">Read more &rarr;</a>
                 </div>
             </div>
-
+    
+            <!-- Project 5: Economic & Nutritional Analysis -->
             <div class="project-card">
                 <div class="project-img">
-                    <img src="econ.PNG" alt="Data Analytics and Visualization" class="project-image">
+                    <img src="econ.PNG" alt="Economic & Nutritional Analysis" class="project-image">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Economic & Nutrional Analysis</h3>
-                    <p class="project-desc">Investigating the economic and structural factors influencing food affordability...</p>
+                    <h3 class="project-title">Economic & Nutritional Analysis</h3>
+                    <p class="project-desc">Investigated economic and structural factors influencing food affordability using regression modeling and hypothesis testing.</p>
                     <div class="project-tech">
                         <span class="tech-tag">R</span>
+                        <span class="tech-tag">OLS Regression</span>
+                        <span class="tech-tag">ANOVA</span>
                     </div>
-                    <a href="#" class="project-link">Read more &rarr;</a>
+                    <a href="#project-economic" class="project-link modal-trigger">Read more &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Project Modal Templates -->
+    <div id="project-modals" class="modal-container">
+        <!-- Automated Sales Data Generation Modal -->
+        <div id="project-automated" class="project-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Automated Sales Data Generation using VBA & SQL</h2>
+                <div class="modal-img">
+                    <img src="aut.PNG" alt="Automated Sales Data Generation">
+                </div>
+                <h3>Objective</h3>
+                <p>To develop a VBA-powered automation system that retrieves sales data from an MS Access database and imports it into Excel for efficient reporting and analysis.</p>
+                
+                <h3>Project Details</h3>
+                <h4>Project Scope</h4>
+                <ul>
+                    <li>Designed a VBA script to extract, transform, and load (ETL) data from an external MS Access database into Excel.</li>
+                    <li>Enabled real-time data retrieval without manual intervention, improving workflow efficiency.</li>
+                </ul>
+                
+                <h4>Key Features & Implementation</h4>
+                <ul>
+                    <li>VBA Macros: Created VBA scripts to establish a seamless connection with MS Access.</li>
+                    <li>SQL Queries: Integrated SQL commands to extract relevant sales data dynamically.</li>
+                    <li>Data Refresh Automation: Implemented automated updates at scheduled intervals or on user demand.</li>
+                    <li>Error Handling & Debugging: Implemented robust error-handling to manage connection failures and invalid queries.</li>
+                </ul>
+                
+                <h4>Business Impact</h4>
+                <ul>
+                    <li>Reduced manual workload by eliminating repetitive data extraction tasks.</li>
+                    <li>Improved decision-making with real-time access to up-to-date sales reports.</li>
+                    <li>Enhanced data accuracy and consistency across reports.</li>
+                </ul>
+                
+                <h4>Skills & Technologies Used</h4>
+                <div class="modal-tech">
+                    <span class="tech-tag">VBA (Excel Macros)</span>
+                    <span class="tech-tag">SQL Queries</span>
+                    <span class="tech-tag">MS Access</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Banking Insights Modal -->
+        <div id="project-banking" class="project-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Banking Insights: Customer Demographics & Spending Analysis</h2>
+                <div class="modal-img">
+                    <img src="demo.PNG" alt="Banking Insights">
+                </div>
+                <h3>Objective</h3>
+                <p>To analyze customer demographics and spending patterns using Power BI and Excel, providing data-driven insights that help a leading Indian bank understand customer behavior and optimize engagement strategies.</p>
+                
+                <h3>Project Details</h3>
+                <h4>Data Overview & Scope</h4>
+                <ul>
+                    <li>Worked with large customer datasets containing demographic details (Gender, Location, Age), financial data (Transaction Amount, Account Balance), and transactional timelines.</li>
+                    <li>Cleaned and processed data using Power Query in Excel for accuracy.</li>
+                </ul>
+                
+                <h4>Key Insights & Analysis</h4>
+                <ul>
+                    <li>Gender-Based Analysis: Identified spending trends across male and female customers.</li>
+                    <li>Location-Based Trends: Mapped customer locations to uncover regional spending variations.</li>
+                    <li>Age Group Segmentation: Analyzed financial behavior by age groups to determine high-value customers.</li>
+                    <li>Transaction Trends Over Time: Used time-series analysis to highlight peak transaction periods.</li>
+                </ul>
+                
+                <h4>Data Visualization & Tools Used</h4>
+                <ul>
+                    <li>Power BI Dashboards: Created interactive bar charts, heatmaps, and line graphs.</li>
+                    <li>Excel & Power Query: Cleaned, transformed, and aggregated data efficiently.</li>
+                </ul>
+                
+                <h4>Business Impact</h4>
+                <ul>
+                    <li>Provided customer spending insights to help the bank personalize services.</li>
+                    <li>Helped refine marketing and engagement strategies based on demographic insights.</li>
+                    <li>Enabled data-driven decision-making through clear and interactive visual reports.</li>
+                </ul>
+                
+                <h4>Skills & Technologies Used</h4>
+                <div class="modal-tech">
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">MS Excel</span>
+                    <span class="tech-tag">Power Query</span>
+                    <span class="tech-tag">Data Visualization</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- iPhone Market Trends Analysis Modal -->
+        <div id="project-iphone" class="project-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>iPhone Market Trends Analysis</h2>
+                <div class="modal-img">
+                    <img src="iphone.PNG" alt="iPhone Market Trends Analysis">
+                </div>
+                <h3>Objective</h3>
+                <p>To analyze iPhone sales performance on Flipkart, identifying the highest-rated models, pricing trends, and the impact of discounts on customer ratings and reviews using Python and data visualization techniques.</p>
+                
+                <h3>Project Details</h3>
+                <h4>Data Overview & Preparation</h4>
+                <ul>
+                    <li>Processed dataset containing iPhone listings on Flipkart.</li>
+                    <li>Checked for missing values to ensure data completeness.</li>
+                    <li>Computed descriptive statistics for better understanding.</li>
+                </ul>
+                
+                <h4>Key Insights & Analysis</h4>
+                <ul>
+                    <li>Top-Rated iPhones in India: Identified the 10 highest-rated iPhones based on Flipkart star ratings.</li>
+                    <li>Customer Engagement: Analyzed the number of ratings and reviews for top-rated models.</li>
+                    <li>Price vs. Ratings Relationship: Explored how sale price affects customer ratings using regression analysis.</li>
+                    <li>Discount Impact on Sales: Investigated whether higher discounts lead to more customer ratings and reviews.</li>
+                </ul>
+                
+                <h4>Data Visualization & Tools Used</h4>
+                <ul>
+                    <li>Python (Pandas, NumPy): Data cleaning and processing.</li>
+                    <li>Plotly (Graph Objects, Express): Created bar charts, scatter plots, and trendline regression.</li>
+                </ul>
+                
+                <h4>Business Impact</h4>
+                <ul>
+                    <li>Provided insights into consumer preferences and pricing strategies.</li>
+                    <li>Helped identify the most engaging iPhone models based on customer interactions.</li>
+                    <li>Allowed businesses to optimize pricing and discount strategies to boost sales.</li>
+                </ul>
+                
+                <h4>Skills & Technologies Used</h4>
+                <div class="modal-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pandas</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">Plotly</span>
+                    <span class="tech-tag">Regression Analysis</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Real Estate Market Analysis Modal -->
+        <div id="project-realestate" class="project-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Real Estate Market Analysis</h2>
+                <div class="modal-img">
+                    <img src="real.PNG" alt="Real Estate Market Analysis">
+                </div>
+                <h3>Objective</h3>
+                <p>To analyze real estate pricing trends in Metropolitan Melbourne and determine whether the average price per square metre (PSM) of residential properties exceeds $6800, using statistical methods and hypothesis testing.</p>
+                
+                <h3>Project Details</h3>
+                <h4>Data Source & Preparation</h4>
+                <ul>
+                    <li>The dataset was sourced from web-scraped real estate listings.</li>
+                    <li>A new variable, PSM (Price per Square Metre), was computed as Price / Building Area.</li>
+                    <li>Missing values in the dataset were cleaned to ensure data integrity.</li>
+                </ul>
+                
+                <h4>Preliminary Analysis</h4>
+                <ul>
+                    <li>Mean PSM: $7673.09 → Higher than the $6800 benchmark.</li>
+                    <li>Median PSM: $6919.12 → Slightly lower than the mean, indicating right-skewed distribution.</li>
+                    <li>Standard Deviation: $4862.60 → High variation in property pricing.</li>
+                    <li>Interquartile Range (IQR): $4173.19 → Further confirms variability.</li>
+                </ul>
+                
+                <h4>Data Visualization</h4>
+                <ul>
+                    <li>Histogram: Showed a right-skewed distribution with a few high-value properties.</li>
+                    <li>Boxplot: Highlighted outliers in the dataset.</li>
+                </ul>
+                
+                <h4>Hypothesis Testing</h4>
+                <ul>
+                    <li>Null Hypothesis (H₀): The mean PSM is $6800.</li>
+                    <li>Alternative Hypothesis (H₁): The mean PSM is greater than $6800.</li>
+                    <li>t-test Result: t-statistic of 12.61 with p-value < 2.2e-16 (highly significant), confirming the mean PSM exceeds $6800.</li>
+                </ul>
+                
+                <h4>Business Impact</h4>
+                <ul>
+                    <li>Helped CityScape Insights, a real estate startup, understand pricing trends in Melbourne.</li>
+                    <li>Provided data-driven validation for market pricing strategies.</li>
+                </ul>
+                
+                <h4>Skills & Technologies Used</h4>
+                <div class="modal-tech">
+                    <span class="tech-tag">R</span>
+                    <span class="tech-tag">dplyr</span>
+                    <span class="tech-tag">ggplot2</span>
+                    <span class="tech-tag">Statistical Testing</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Economic & Nutritional Analysis Modal -->
+        <div id="project-economic" class="project-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Economic & Nutritional Analysis: Determinants of Food Budget Constraints</h2>
+                <div class="modal-img">
+                    <img src="econ.PNG" alt="Economic & Nutritional Analysis">
+                </div>
+                <h3>Objective</h3>
+                <p>To investigate the economic and structural factors influencing food affordability, using regression modeling and hypothesis testing to assess the impact of GDP, education expenditure, agriculture, exports, and natural resource rents on the percentage of the population with a low food budget.</p>
+                
+                <h3>Project Details</h3>
+                <h4>Data Overview & Preparation</h4>
+                <ul>
+                    <li>Dataset included country-level data on GNI per capita, government education expenditure, agricultural value added, exports, and natural resource rents.</li>
+                    <li>Selected key independent variables for modeling and handled missing values to ensure accurate regression analysis.</li>
+                </ul>
+                
+                <h4>Regression Analysis & Hypothesis Testing</h4>
+                <ul>
+                    <li>Ordinary Least Squares (OLS) Regression: Modeled how economic variables affect the percentage of the population with a low food budget.</li>
+                    <li>Log Transformation: Applied log transformation to stabilize variance and improve model accuracy.</li>
+                    <li>Multicollinearity Check (VIF): Ensured independent variables were not highly correlated.</li>
+                    <li>Heteroskedasticity Test (Breusch-Pagan Test): Checked for non-constant variance in the model.</li>
+                    <li>HAC Standard Errors: Used heteroskedasticity-consistent standard errors for robust coefficient estimation.</li>
+                </ul>
+                
+                <h4>Impact of Regional Differences</h4>
+                <ul>
+                    <li>Included regional dummy variables to analyze variations across different geographic locations.</li>
+                    <li>Conducted ANOVA to compare models with and without regional dummies, assessing whether location significantly impacts food affordability.</li>
+                </ul>
+                
+                <h4>Data Visualization & Tools Used</h4>
+                <ul>
+                    <li>ggplot2 for scatter plots showing relationships between variables.</li>
+                    <li>Linear regression analysis to quantify the influence of economic factors.</li>
+                    <li>ANOVA testing to assess the importance of regional differences.</li>
+                </ul>
+                
+                <h4>Key Insights & Business Impact</h4>
+                <ul>
+                    <li>Identified economic indicators that significantly affect food affordability.</li>
+                    <li>Demonstrated regional disparities in food budget constraints.</li>
+                    <li>Provided policy recommendations for improving food security through economic and educational investments.</li>
+                </ul>
+                
+                <h4>Skills & Technologies Used</h4>
+                <div class="modal-tech">
+                    <span class="tech-tag">R</span>
+                    <span class="tech-tag">Regression Analysis</span>
+                    <span class="tech-tag">ggplot2</span>
+                    <span class="tech-tag">ANOVA</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section id="skills" class="skills">
         <h1>Skills</h1>
