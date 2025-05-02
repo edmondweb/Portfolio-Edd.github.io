@@ -43,7 +43,7 @@ header.scrolled {
 }
 
 .logo p {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
 }
 
@@ -366,7 +366,7 @@ nav ul li a:hover::after {
 }
 
 .skills .project-header h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #f1f1f1;
     margin-bottom: 20px;
     font-weight: 600;
@@ -385,7 +385,7 @@ nav ul li a:hover::after {
     color: #3498db;
     padding: 8px 15px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
     white-space: nowrap;
@@ -460,7 +460,7 @@ nav ul li a:hover::after {
 .contact-info {
     flex: 1;
     min-width: 300px;
-    text-align: left;
+    text-align: center;
 }
 
 .contact-form {
