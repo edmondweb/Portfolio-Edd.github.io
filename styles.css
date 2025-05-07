@@ -77,6 +77,8 @@ nav ul li a {
     font-weight: 500;
     position: relative;
     padding: 5px 0;
+    animation: fadeIn 2s ease-in;
+    transition: color 0.3s ease;
 }
 
 nav ul li a::after {
@@ -212,6 +214,11 @@ nav ul li a:hover::after {
     font-weight: 700;
     position: relative;
     display: inline-block;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease-in;
 }
 
 .projects h2::after {
@@ -331,6 +338,11 @@ nav ul li a:hover::after {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease-in;
 }
 
 .skills h1::after {
@@ -429,6 +441,11 @@ nav ul li a:hover::after {
     font-weight: 700;
     position: relative;
     display: inline-block;
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeIn 1s ease-in;
 }
 
 .contact h1::after {
@@ -980,6 +997,7 @@ footer p a:hover {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    animation: fadeIn 1s ease-in;
 }
 
 .testimonials h1::after {
